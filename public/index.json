@@ -1,0 +1,78 @@
+[
+{
+	"uri": "http://beef-lang.org/foreward/",
+	"title": "Foreword",
+	"tags": [],
+	"description": "",
+	"content": "This is the foreword\n"
+},
+{
+	"uri": "http://beef-lang.org/getting-start/",
+	"title": "Getting Started",
+	"tags": [],
+	"description": "",
+	"content": "Hey\n"
+},
+{
+	"uri": "http://beef-lang.org/language-guide/",
+	"title": "Language Guide",
+	"tags": [],
+	"description": "",
+	"content": "Language Guide\n"
+},
+{
+	"uri": "http://beef-lang.org/_footer/",
+	"title": "",
+	"tags": [],
+	"description": "",
+	"content": "Footer!\n"
+},
+{
+	"uri": "http://beef-lang.org/",
+	"title": "Beef Documentation",
+	"tags": [],
+	"description": "",
+	"content": " Getting Started "
+},
+{
+	"uri": "http://beef-lang.org/categories/",
+	"title": "Categories",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "http://beef-lang.org/ide/debugger/",
+	"title": "Debugger",
+	"tags": [],
+	"description": "",
+	"content": "Debugger\n"
+},
+{
+	"uri": "http://beef-lang.org/ide/",
+	"title": "IDE",
+	"tags": [],
+	"description": "",
+	"content": " Beef IDE 60 hz Tabs / moving windows around / etc Go To Definition Rename Fixits File List Method List Find References Autocomplete on watch Disassembly Leak Trace MiniDump support Symbol Sever / Source Server support Stepping through/over inlined code works as expected Hot Loading VTables Function/delegate equality Spell Checker\n"
+},
+{
+	"uri": "http://beef-lang.org/getting-start/installation/",
+	"title": "Install",
+	"tags": [],
+	"description": "",
+	"content": "Install\n"
+},
+{
+	"uri": "http://beef-lang.org/tags/",
+	"title": "Tags",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "http://beef-lang.org/language-guide/basics/",
+	"title": "The Basics",
+	"tags": [],
+	"description": "",
+	"content": " Beef is a new programming language.\nDesign goals  High performance execution  No GC or ref counting overhead Minimal runtime  Control over memory  Extensive support for custom allocators Enchanced control over stack memory  Low-friction interop with C and C++  Statically or dynamically link to normal C/C++ libraries Support for C/C++ structure layouts and calling conventions  Leverage LLVM infrastructure  Battle-hardened backend optimizer ThinLTO link time optimization support  Enable fluid iterative development  Fast incremental compilation and linking Runtime code compilation, including data layout changes  Familiar syntax and programming paradigms Good Debugability  Emits standard debug information (PDB/DWARF) Emphasis on good execution speed of debug builds  Well-suite to IDE-based workflow  Compiler as a service Fast and correct autocomplete results Fast and trustworthy refactorability (ie: renaming symbols)   Optional interface conformance in extensions Default interface methods Expression blocks \u0026lsquo;Self\u0026rsquo; First-class functions (?) Nested block comments Sensible \u0026lsquo;ref\u0026rsquo; rules- refs fall away unless re-asserted with \u0026lsquo;ref\u0026rsquo; expression Readonly ref Variable declarations in \u0026lsquo;if\u0026rsquo; Attributed member access ie: [Friend] [Inline] Properties Including indexer property (can be multi-dimensional) Allocationless method binding \u0026ldquo;=\u0026gt; Method\u0026rdquo; - passing to generic Initializer syntax for arrays and structs - same for init as assign Explicit inlining Type inference RAII Protection specifiers Provide an \u0026ldquo;escape hatch\u0026rdquo; to pierce protection Attributes Can even be used in member-reference contexts with things like [Friend] or callsite specifications like [Inline]\nCompilation Model Workspace-wide compilation model Allows setting safety, tracing, and optimization options at Function, type, namespace, or project level LLVM ThinLTO Og+ PDB Mixed-optimization compilation Methods/types can be selectively optimized Release / Debug\nCompile Time Errors and Warnings #unwarn\nFlow Control Labeled scopes Allows stack allocation outside the current scope Allows Break/Continue out the current loop\nReflection Interop Painless FFI\nExtensions Can even be added to types defined outside your own project\nGenerics Const generics Generic methods\nSwitches and Pattern Matching Switches Support for non-integral types Enforces comprehensive checks on enums Pattern matching\nMethods Local methods Implicit capture\nEnums Discriminated unions\nMemory Management Custom allocators Mixin allocators can even allocate on the stack Targeted stack allocations Append allocations\nDefer Keywords Operators .? Conditional ?? (.) casting Cascade .. Optional .?\nSensible operator overloading Spaceship operator for comparisons Operator requirements can be placed on interfaces\nCalling Conventions Param Splatting Method selection\nRanges Range-based for loops\nMethod References Lambdas Valueless method references Method references - Binding generic param to a non-allocating method reference instead of passing a delegate Valueless method refs Param forwarding Functions / delegates / events\nTuples Interfaces Interfaces Concrete Const MethodRef \u0026lsquo;Self\u0026rsquo;\nBuilding Mixins Constants and Variables Arrays Initialization - trailing comma Pointer result Mixins Events Delegates Variable shadowing Immutable variables\nData Types Opaque types Class / Struct Boxing - including boxing to the stack Primitive-typed structs Unions Uninitialized memory: Objects are zero-initialized by default Structs enforce that constructors explicitly initialized all values Structs on the stack must be fully initialized before being used Provides an \u0026ldquo;escape hatch\u0026rdquo; through the uninitialized \u0026ldquo;?\u0026rdquo; expression Efficient layout Zero-sized types are supported Fields can be reordered to provide aligned access while reducing unused space A type\u0026rsquo;s stride can be different than its size, removing unused filler at the end of a type that could be filled by actual data when extending the type or using it on the stack \u0026ldquo;Const\u0026rdquo; is used for actual constants Arrays With \u0026ldquo;type-erased\u0026rdquo; sizing and type-sized Sized arrays (with optional bounds checking) Int-coercible char arrays (fast comparisons, using in switch statement) Overloading\nType Conversions Operators Error Handling Strings Multi-line strings UTF8 Native String type Interning\nCore Library "
+}]

@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Beef Language</title>
+    
+      <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="revised" content="2018-12-02T06:47:53 PST">
+<title>The Basics :: Beef Language</title>
+<link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
+<link href="/css/font-awesome.min.css" rel="stylesheet">
+<link href="/css/nucleus.css" rel="stylesheet">
+<link href="/theme-flex/style.css" rel="stylesheet">
+
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<script src="/js/jquery-2.x.min.js"></script>
+<script type="text/javascript">
+      var baseurl = "http:\/\/beef-lang.org\/";
+</script>
+<meta name="description" content="">
+
+
+
+    
+  </head>
+  <body data-url="/language-guide/basics/">
+    
+      <header>
+  <div class="logo">
+    
+	
+  
+    <a class="baselink" href="http://beef-lang.org/">Beef Language</a>
+  
+
+
+  </div>
+  <div class="burger"><a href="javascript:void(0);" style="font-size:15px;">&#9776;</a></div>
+</header>
+<article>
+  <aside>
+    <ul class="menu">
+          <li data-nav-id="/" class="dd-item">
+          <a href="/">
+            <i class="fa fa-fw fa-home"></i>
+          </a>
+          </li>
+    <li data-nav-id="/foreward/" class="dd-item
+        ">
+      <div>
+      <a href="/foreward/">Foreword</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+    <li data-nav-id="/getting-start/" class="dd-item alwaysopen haschildren
+        ">
+      <div>
+      <a href="/getting-start/">Getting Started</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/getting-start/installation/" class="dd-item">
+        <div>
+          <a href="/getting-start/installation/">
+            Install
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/language-guide/" class="dd-item parent alwaysopen haschildren
+        ">
+      <div>
+      <a href="/language-guide/">Language Guide</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/language-guide/basics/" class="dd-item active">
+        <div>
+          <a href="/language-guide/basics/">
+            The Basics
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/ide/" class="dd-item alwaysopen haschildren
+        ">
+      <div>
+      <a href="/ide/">IDE</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/ide/debugger/" class="dd-item">
+        <div>
+          <a href="/ide/debugger/">
+            Debugger
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+
+
+
+
+    </ul>
+    <section>
+    </section>
+  </aside>
+  <section class="page">
+    
+    <div class="nav-select">
+      <center>Navigation : 
+        <select onchange="javascript:location.href = this.value;">
+          
+    <option value="/foreward/" >
+   Foreword</option>
+    <option value="/getting-start/" >
+   Getting Started</option> 
+      <option value="/getting-start/installation/" >- Install</option>
+  
+    <option value="/language-guide/" >
+   Language Guide</option> 
+      <option value="/language-guide/basics/"  selected>- The Basics</option>
+  
+    <option value="/ide/" >
+   IDE</option> 
+      <option value="/ide/debugger/" >- Debugger</option>
+  
+
+
+
+        </select>
+      </center>
+    </div>
+      <div>
+        <div class="searchbox">
+          <input data-search-input id="search-by" type="text" placeholder="Search...">
+        </div>
+        <script type="text/javascript" src="/js/lunr.min.js"></script>
+        <script type="text/javascript" src="/js/auto-complete.js"></script>
+        <link href="/css/auto-complete.css" rel="stylesheet">
+        <script type="text/javascript">
+          
+              var baseurl = "http:\/\/beef-lang.org\/";
+          
+        </script>
+        <script type="text/javascript" src="/js/search.js"></script>
+      </div>
+    
+
+    <h1>The Basics</h1>
+    
+    
+    
+    
+
+<p>Beef is a new programming language.</p>
+
+<h3 id="design-goals">Design goals</h3>
+
+<ul>
+<li>High performance execution
+
+<ul>
+<li>No GC or ref counting overhead</li>
+<li>Minimal runtime</li>
+</ul></li>
+<li>Control over memory
+
+<ul>
+<li>Extensive support for custom allocators</li>
+<li>Enchanced control over stack memory</li>
+</ul></li>
+<li>Low-friction interop with C and C++
+
+<ul>
+<li>Statically or dynamically link to normal C/C++ libraries</li>
+<li>Support for C/C++ structure layouts and calling conventions</li>
+</ul></li>
+<li>Leverage LLVM infrastructure
+
+<ul>
+<li>Battle-hardened backend optimizer</li>
+<li>ThinLTO link time optimization support</li>
+</ul></li>
+<li>Enable fluid iterative development
+
+<ul>
+<li>Fast incremental compilation and linking</li>
+<li>Runtime code compilation, including data layout changes</li>
+</ul></li>
+<li>Familiar syntax and programming paradigms</li>
+<li>Good Debugability
+
+<ul>
+<li>Emits standard debug information (PDB/DWARF)</li>
+<li>Emphasis on good execution speed of debug builds</li>
+</ul></li>
+<li>Well-suite to IDE-based workflow
+
+<ul>
+<li>Compiler as a service</li>
+<li>Fast and correct autocomplete results</li>
+<li>Fast and trustworthy refactorability (ie: renaming symbols)</li>
+</ul></li>
+</ul>
+
+<p>Optional interface conformance in extensions
+Default interface methods
+Expression blocks
+&lsquo;Self&rsquo;
+First-class functions (?)
+Nested block comments
+Sensible &lsquo;ref&rsquo; rules- refs fall away unless re-asserted with &lsquo;ref&rsquo; expression
+    Readonly ref
+Variable declarations in &lsquo;if&rsquo;
+Attributed member access ie: [Friend] [Inline]
+Properties
+    Including indexer property (can be multi-dimensional)
+Allocationless method binding &ldquo;=&gt; Method&rdquo; - passing to generic
+Initializer syntax for arrays and structs - same for init as assign
+Explicit inlining
+Type inference
+RAII
+Protection specifiers
+    Provide an &ldquo;escape hatch&rdquo; to pierce protection
+Attributes
+    Can even be used in member-reference contexts with things like [Friend] or callsite specifications like [Inline]</p>
+
+<h3 id="compilation-model">Compilation Model</h3>
+
+<p>Workspace-wide compilation model
+    Allows setting safety, tracing, and optimization options at
+        Function, type, namespace, or project level
+LLVM
+ThinLTO
+Og+
+PDB
+Mixed-optimization compilation
+Methods/types can be selectively optimized
+Release / Debug</p>
+
+<h3 id="compile-time-errors-and-warnings">Compile Time Errors and Warnings</h3>
+
+<p>#unwarn</p>
+
+<h3 id="flow-control">Flow Control</h3>
+
+<p>Labeled scopes
+    Allows stack allocation outside the current scope
+    Allows Break/Continue out the current loop</p>
+
+<h3 id="reflection">Reflection</h3>
+
+<h3 id="interop">Interop</h3>
+
+<p>Painless FFI</p>
+
+<h3 id="extensions">Extensions</h3>
+
+<p>Can even be added to types defined outside your own project</p>
+
+<h3 id="generics">Generics</h3>
+
+<p>Const generics
+Generic methods</p>
+
+<h3 id="switches-and-pattern-matching">Switches and Pattern Matching</h3>
+
+<p>Switches
+    Support for non-integral types
+    Enforces comprehensive checks on enums
+    Pattern matching</p>
+
+<h3 id="methods">Methods</h3>
+
+<p>Local methods
+    Implicit capture</p>
+
+<h3 id="enums">Enums</h3>
+
+<p>Discriminated unions</p>
+
+<h3 id="memory-management">Memory Management</h3>
+
+<p>Custom allocators
+    Mixin allocators can even allocate on the stack
+Targeted stack allocations
+Append allocations</p>
+
+<h3 id="defer">Defer</h3>
+
+<h3 id="keywords">Keywords</h3>
+
+<h3 id="operators">Operators</h3>
+
+<p>.? Conditional
+??
+(.) casting
+Cascade ..
+Optional .?</p>
+
+<p>Sensible operator overloading
+    Spaceship operator for comparisons
+    Operator requirements can be placed on interfaces</p>
+
+<h3 id="calling-conventions">Calling Conventions</h3>
+
+<p>Param Splatting
+Method selection</p>
+
+<h3 id="ranges">Ranges</h3>
+
+<p>Range-based for loops</p>
+
+<h3 id="method-references">Method References</h3>
+
+<p>Lambdas
+    Valueless method references
+Method references -
+    Binding generic param to a non-allocating method reference instead of passing a delegate
+Valueless method refs
+Param forwarding
+Functions / delegates / events</p>
+
+<h3 id="tuples">Tuples</h3>
+
+<h3 id="interfaces">Interfaces</h3>
+
+<p>Interfaces
+    Concrete
+    Const
+    MethodRef
+    &lsquo;Self&rsquo;</p>
+
+<h3 id="building">Building</h3>
+
+<h3 id="mixins">Mixins</h3>
+
+<h3 id="constants-and-variables">Constants and Variables</h3>
+
+<p>Arrays
+    Initialization - trailing comma
+    Pointer result
+Mixins
+Events
+Delegates
+Variable shadowing
+Immutable variables</p>
+
+<h3 id="data-types">Data Types</h3>
+
+<p>Opaque types
+Class / Struct
+Boxing - including boxing to the stack
+Primitive-typed structs
+Unions
+Uninitialized memory:
+    Objects are zero-initialized by default
+    Structs enforce that constructors explicitly initialized all values
+    Structs on the stack must be fully initialized before being used
+    Provides an &ldquo;escape hatch&rdquo; through the uninitialized &ldquo;?&rdquo; expression
+Efficient layout
+    Zero-sized types are supported
+    Fields can be reordered to provide aligned access while reducing unused space
+    A type&rsquo;s stride can be different than its size, removing unused filler at the end of a type that could be filled by actual data when extending the type or using it on the stack
+&ldquo;Const&rdquo; is used for actual constants
+Arrays
+    With &ldquo;type-erased&rdquo; sizing and type-sized
+Sized arrays (with optional bounds checking)
+    Int-coercible char arrays (fast comparisons, using in switch statement)
+Overloading</p>
+
+<h3 id="type-conversions">Type Conversions</h3>
+
+<h3 id="operators-1">Operators</h3>
+
+<h3 id="error-handling">Error Handling</h3>
+
+<h3 id="strings">Strings</h3>
+
+<p>Multi-line strings
+UTF8
+Native String type
+    Interning</p>
+
+<h3 id="core-library">Core Library</h3>
+
+
+    
+    
+        <div class="chevrons">
+    <div id="navigation">
+<a class="nav nav-prev" href="/language-guide/" title="Language Guide"> <i class="fa fa-chevron-left"></i><label>Language Guide</label></a>
+    <a class="nav nav-next" href="/ide/" title="IDE" style="margin-right: 0px;"><label>IDE</label><i class="fa fa-chevron-right"></i></a></div>
+  </div>
+
+  </section>
+</article>
+
+<footer>
+
+<div class="footline">
+    
+
+    
+
+    
+
+    
+    <div class="github-link">
+      <a href="https://github.com/vjeantet/hugo-theme-docdock/edit/master/exampleSite/content/language-guide/basics.md" target="blank"><i class="fa fa-code-fork"></i>
+        Improve this page</a>
+    </div>
+    
+  </div>
+
+
+	<div>
+
+
+  
+    <p>Footer!</p>
+
+  
+
+
+
+	</div>
+</footer>
+
+<script src="/js/clipboard.min.js"></script>
+
+<link href="/css/featherlight.min.css" rel="stylesheet">
+<script src="/js/featherlight.min.js"></script>
+
+
+
+<script src="/theme-flex/script.js"></script>
+
+
+    
+
+    
+    
+
+    
+  </body>
+</html>

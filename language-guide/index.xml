@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Language Guide on Beef Language</title>
+    <link>http://beef-lang.org/language-guide/</link>
+    <description>Recent content in Language Guide on Beef Language</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="http://beef-lang.org/language-guide/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>The Basics</title>
+      <link>http://beef-lang.org/language-guide/basics/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://beef-lang.org/language-guide/basics/</guid>
+      <description>Beef is a new programming language.
+Design goals  High performance execution  No GC or ref counting overhead Minimal runtime  Control over memory  Extensive support for custom allocators Enchanced control over stack memory  Low-friction interop with C and C++  Statically or dynamically link to normal C/C++ libraries Support for C/C++ structure layouts and calling conventions  Leverage LLVM infrastructure  Battle-hardened backend optimizer ThinLTO link time optimization support  Enable fluid iterative development  Fast incremental compilation and linking Runtime code compilation, including data layout changes  Familiar syntax and programming paradigms Good Debugability  Emits standard debug information (PDB/DWARF) Emphasis on good execution speed of debug builds  Well-suite to IDE-based workflow  Compiler as a service Fast and correct autocomplete results Fast and trustworthy refactorability (ie: renaming symbols)   Optional interface conformance in extensions Default interface methods Expression blocks &amp;lsquo;Self&amp;rsquo; First-class functions (?</description>
+    </item>
+    
+  </channel>
+</rss>
